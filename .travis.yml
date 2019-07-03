@@ -10,14 +10,14 @@ matrix:
   include:
     - os: linux
       dist: xenial
+      before_install:
+        - sudo apt-get update
+      install:
+        - sudo apt-get install build-essential
+      script:
+        - make
+        - ./main.exe
     - os: windows
-
-before_install:
-  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get update ; fi
-install:
-  - if [ "$TRAVIS_OS_NAME" = "linux" ]; sudo apt-get install build-essential ; fi
-script: 
-  - if [ "$TRAVIS_OS_NAME" = "linux" ]; make ; fi
-  - if [ "$TRAVIS_OS_NAME" = "linux" ]; ./main.exe ; fi
-  - if [ "$TRAVIS_OS_NAME" = "windows" ]; gcc main.c MNIST_API.h MNIST_API_impl.c -o main ; fi
-  - if [ "$TRAVIS_OS_NAME" = "windows" ]; main.exe ; fi
+      script:
+      - gcc main.c MNIST_API.h MNIST_API_impl.c -o main
+      - main.exe
