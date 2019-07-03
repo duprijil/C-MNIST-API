@@ -2,9 +2,9 @@ branches:
   only:
   - master
 
-language: c
+#language: c
 
-compiler: gcc
+#compiler: gcc
 
 matrix:
   include:
