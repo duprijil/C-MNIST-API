@@ -160,7 +160,7 @@ uint32_t* mnistapi_getRandomTestImage(void) {
 
 
 uint32_t* mnistapi_getRandomTrainImageByNumber(uint32_t number) {
-    if((number < 0) && (number > 9)) return NULL;
+    if((number < 0) || (number > 9)) return NULL;
     uint32_t randNumber = 0;
     uint32_t* image = (uint32_t*)malloc(sizeof(uint32_t) * IMAGE_SIZE);
     register uint32_t j = 0;
