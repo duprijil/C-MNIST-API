@@ -119,7 +119,7 @@ void mnistapi_closeTraining() {
 
 void mnistapi_printImage(uint32_t* matrix) {
     for(uint32_t j = 0; j < IMAGE_SIZE; j++) {
-        printf("%lu ", matrix[j]);
+        printf("%u ", matrix[j]);
         if(((j+1) % 28) == 0) putchar('\n');
     }
     putchar('\n');
