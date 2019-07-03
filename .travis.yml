@@ -1,0 +1,14 @@
+language: c
+compiler: gcc
+dist: xenial
+branches:
+  only:
+  - master
+before_install:
+  - sudo apt-get update
+  - sudo apt-get upgrade
+install:
+  - sudo apt-get install build-essential
+script: 
+  - make
+  - ./main
