@@ -16,8 +16,8 @@ matrix:
         - sudo apt-get install build-essential
       script:
         - make
-        - ./main.exe
+        - ./main
     - os: windows
       script:
       - gcc main.c MNIST_API.h MNIST_API_impl.c -o main
-      - main.exe
+      - .\main.exe
