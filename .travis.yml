@@ -1,17 +1,15 @@
-language: c
 compiler: gcc
-matrix:
-  include:
+language: c
+matrix: 
+  include: 
     - os: linux
-       dist: xenial
-       before_install:
-         - sudo apt-get update
-       install:
-         - sudo apt-get install build-essential
-       script:
-         - make
-         - ./main
+      before_install: "sudo apt-get update"
+      dist: xenial
+      install: "sudo apt-get install build-essential"
+      script: 
+        - make
+        - ./main
     - os: windows
-       script:
-       - gcc main.c MNIST_API.h MNIST_API_impl.c -o main
-       - .\main.exe
+      script: 
+        - "gcc main.c MNIST_API.h MNIST_API_impl.c -o main"
+        - .\\main.exe
