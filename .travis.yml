@@ -1,10 +1,5 @@
-branches:
-  only:
-  - master
-
-#language: c
-
-#compiler: gcc
+language: c
+compiler: gcc
 
 matrix:
   include:
