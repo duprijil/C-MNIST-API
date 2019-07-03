@@ -1,7 +1,5 @@
 language: c
-
 compiler: gcc
-
 matrix:
   include:
     - os: linux
