@@ -10,11 +10,19 @@
 //* time() *//
 #include <time.h>
 
-#define MNIST_TRAIN_IMAGES_FILE "data/train-images.idx3-ubyte"
-#define MNIST_TRAIN_LABELS_FILE "data/train-labels.idx1-ubyte"
+#ifdef __linux__ 
+    #define MNIST_TRAIN_IMAGES_FILE "data/train-images.idx3-ubyte"
+    #define MNIST_TRAIN_LABELS_FILE "data/train-labels.idx1-ubyte"
+    #define MNIST_TEST_IMAGES_FILE "data/t10k-images.idx3-ubyte"
+    #define MNIST_TEST_LABELS_FILE "data/t10k-labels.idx1-ubyte"
+#elif _WIN32
+    #define MNIST_TRAIN_IMAGES_FILE "data\\train-images.idx3-ubyte"
+    #define MNIST_TRAIN_LABELS_FILE "data\\train-labels.idx1-ubyte"
+    #define MNIST_TEST_IMAGES_FILE "data\\t10k-images.idx3-ubyte"
+    #define MNIST_TEST_LABELS_FILE "data\\t10k-labels.idx1-ubyte"
+#else
 
-#define MNIST_TEST_IMAGES_FILE "data/t10k-images.idx3-ubyte"
-#define MNIST_TEST_LABELS_FILE "data/t10k-labels.idx1-ubyte"
+#endif
 
 
 /// Train files
